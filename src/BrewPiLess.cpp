@@ -1703,6 +1703,16 @@ void handleReset()
 void brewpi_setup()
 {
 
+  pinMode(27, OUTPUT); 
+  digitalWrite(27, LOW);
+  pinMode(13, OUTPUT); 
+  digitalWrite(13, LOW); // Green status led
+  pinMode(15, OUTPUT); 
+  digitalWrite(15, LOW); // Blue Wifi led
+  pinMode(16, OUTPUT); 
+  digitalWrite(16, HIGH); // Red power led
+  delay(200); 
+
 #if defined(ESP8266)
 	// We need to initialize the EEPROM on ESP8266
 	EEPROM.begin(MAX_EEPROM_SIZE_LIMIT);

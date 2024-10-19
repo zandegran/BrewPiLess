@@ -344,34 +344,34 @@
 // pins
 #ifdef ESP32
 
-#define PIN_SDA 21
-#define PIN_SCL 22
+#define PIN_SDA 17
+#define PIN_SCL 18
 
 
-#define oneWirePin    23
+#define oneWirePin    25
 
-#define actuatorPin1  16
+#define actuatorPin1  21  // This is relay 1
 #define actuatorPin2  17
-#define actuatorPin3  19
-#define actuatorPin4  27
+#define actuatorPin3  18
+#define actuatorPin4  24
 #define actuatorPin5  26
 
 #if MORE_PINS_CONFIGURATION
 
-#define actuatorPin6  18
+#define actuatorPin6  34
 
 #define fanPin 14
 #define doorPin 34
 
-#define BuzzPin 4
+#define BuzzPin 4 // This is relay 2
 
 #else
-#define BuzzPin       18
+#define BuzzPin       4
 #endif
 // 34,35,66,39 input only
 #define rotaryAPin      32
 #define rotaryBPin      33
-#define rotarySwitchPin 25
+#define rotarySwitchPin 35
 
 // Only ADC1 (pin 32~39) is allowed 
 #define PressureAdcPin  36
