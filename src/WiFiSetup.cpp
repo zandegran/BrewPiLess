@@ -83,7 +83,7 @@ bool WiFiSetupClass::isApMode(){
 void WiFiSetupClass::begin(WiFiMode mode, char const *ssid,const char *passwd,char const* targetSSID,const char *targetPass)
 {
 	wifi_info("begin:");
-	
+	pinMode(15, OUTPUT); // Blue Wifi led
 	if(targetSSID && targetSSID[0]){
 		if(_targetSSID) free((void*)_targetSSID);
 		_targetSSID=strdup(targetSSID);
@@ -192,6 +192,7 @@ String WiFiSetupClass::status(void){
 
 bool WiFiSetupClass::stayConnected(void)
 {
+  	digitalWrite(15, HIGH);
 	if(WiFi.getMode() == WIFI_AP || WiFi.getMode() == WIFI_AP_STA){
 		dnsServer->processNextRequest();
 //		if(_mode == WIFI_AP) return true;
@@ -342,6 +343,7 @@ bool WiFiSetupClass::stayConnected(void)
  	} // WiFi.status() != WL_CONNECTED 
  	else // connected
  	{
+		 digitalWrite(15, LOW);
 		 if(_mode == WIFI_AP){
 			 DBG_PRINTF("Connected in AP_mode\n");
 		 }else{

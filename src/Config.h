@@ -307,6 +307,7 @@
 // always true #define SettableMinimumCoolTime true
 //#endif
 
+#define ARDUINO_ARCH_ESP32 true
 #ifndef UseLittleFS
 
 #define UseLittleFS true
@@ -344,16 +345,17 @@
 // pins
 #ifdef ESP32
 
-#define PIN_SDA 17
-#define PIN_SCL 18
+// for connecting oled
+#define PIN_SDA 17 // TM1621 CS
+#define PIN_SCL 18 // TM1621 WR
 
 
-#define oneWirePin    25
+#define oneWirePin 25
 
 #define actuatorPin1  21  // This is relay 1
-#define actuatorPin2  17
-#define actuatorPin3  18
-#define actuatorPin4  24
+#define actuatorPin2  23  // TM1621 RD
+#define actuatorPin3  5   // TM1621 DAT
+#define actuatorPin4  24  
 #define actuatorPin5  26
 
 #if MORE_PINS_CONFIGURATION

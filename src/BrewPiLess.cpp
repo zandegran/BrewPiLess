@@ -1702,16 +1702,10 @@ void handleReset()
 
 void brewpi_setup()
 {
-
-  pinMode(27, OUTPUT); 
-  digitalWrite(27, LOW);
-  pinMode(13, OUTPUT); 
-  digitalWrite(13, LOW); // Green status led
-  pinMode(15, OUTPUT); 
-  digitalWrite(15, LOW); // Blue Wifi led
+  pinMode(27, OUTPUT);  // Power for sonoff temp sensor
+  digitalWrite(27, HIGH);
   pinMode(16, OUTPUT); 
-  digitalWrite(16, HIGH); // Red power led
-  delay(200); 
+  digitalWrite(16, LOW); // Red power led
 
 #if defined(ESP8266)
 	// We need to initialize the EEPROM on ESP8266

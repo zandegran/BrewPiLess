@@ -77,6 +77,7 @@ uint16_t TempControl::waitTime;
 #endif
 
 void TempControl::init(void){
+	pinMode(13, OUTPUT); // Green status led
 	state=IDLE;
 	cs.mode = MODE_OFF;
 
@@ -394,10 +395,17 @@ void TempControl::updateOutputs(void) {
 	cameraLight.update();
 	bool heating = stateIsHeating();
 	bool cooling = stateIsCooling();
+	
 	cooler->setActive(cooling);
 	heater->setActive(!cc.lightAsHeater && heating);
 	light->setActive(isDoorOpen() || (cc.lightAsHeater && heating) || cameraLightState.isActive());
 	fan->setActive(heating || cooling);
+	if (heating || cooling) {
+  		digitalWrite(13, LOW);
+	}
+	else {
+		digitalWrite(13, HIGH);
+	}
 }
 
 
