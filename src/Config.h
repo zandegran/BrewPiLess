@@ -346,8 +346,8 @@
 #ifdef ESP32
 
 // for connecting oled
-#define PIN_SDA 17 // TM1621 CS
-#define PIN_SCL 18 // TM1621 WR
+#define PIN_SCL 17 // TM1621 CS
+#define PIN_SDA 18 // TM1621 WR
 
 
 #define oneWirePin 25
