@@ -78,7 +78,7 @@ uint16_t TempControl::waitTime;
 #endif
 
 void TempControl::init(void){
-	if (SONOFF_NEWGEN) {
+	if (SONOFF_TH_ELITE_ORIGIN) {
 		pinMode(relayIndicatorPin, OUTPUT);
 	}
 	state=IDLE;
@@ -402,7 +402,7 @@ void TempControl::updateOutputs(void) {
 	heater->setActive(!cc.lightAsHeater && heating);
 	light->setActive(isDoorOpen() || (cc.lightAsHeater && heating) || cameraLightState.isActive());
 	fan->setActive(heating || cooling);
-	if (SONOFF_NEWGEN && (heating || cooling)) {
+	if (SONOFF_TH_ELITE_ORIGIN && (heating || cooling)) {
   		digitalWrite(relayIndicatorPin, LOW);
 	}
 	else {

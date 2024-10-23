@@ -313,8 +313,8 @@
 
 #endif
 
-#ifndef SONOFF_NEWGEN
-#define SONOFF_NEWGEN false
+#ifndef SONOFF_TH_ELITE_ORIGIN
+#define SONOFF_TH_ELITE_ORIGIN false
 #endif
 
 #if ESP32
@@ -348,7 +348,7 @@
 // pins
 #ifdef ESP32
 
-#if SONOFF_NEWGEN
+#if SONOFF_TH_ELITE_ORIGIN
 
 #define PIN_SCL 17 // TM1621 CS
 #define PIN_SDA 18 // TM1621 WR
@@ -361,7 +361,7 @@
 #define actuatorPin3  5   // TM1621 DAT
 #define actuatorPin4  24  
 #define actuatorPin5  26
-#else // SONOFF_NEWGEN ends
+#else // SONOFF_TH_ELITE_ORIGIN ends
 
 #define PIN_SDA 21
 #define PIN_SCL 22
@@ -393,7 +393,7 @@
 // 34,35,66,39 input only
 #define rotaryAPin      32
 #define rotaryBPin      33
-#if SONOFF_NEWGEN
+#if SONOFF_TH_ELITE_ORIGIN
 #define rotarySwitchPin 35
 #else
 #define rotarySwitchPin 25

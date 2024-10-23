@@ -98,7 +98,7 @@
 #endif
 #endif
 
-#if SONOFF_NEWGEN
+#if SONOFF_TH_ELITE_ORIGIN
 #ifndef powerIndicatorPin
 #define powerIndicatorPin 16
 #endif

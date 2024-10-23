@@ -1702,7 +1702,7 @@ void handleReset()
 
 void brewpi_setup()
 {
-	if (SONOFF_NEWGEN) {
+	if (SONOFF_TH_ELITE_ORIGIN) {
 		pinMode(sensorPowerPin, OUTPUT);  // Power for sonoff temp sensor
 		digitalWrite(sensorPowerPin, HIGH);
 		pinMode(powerIndicatorPin, OUTPUT); 

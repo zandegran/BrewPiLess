@@ -84,7 +84,7 @@ bool WiFiSetupClass::isApMode(){
 void WiFiSetupClass::begin(WiFiMode mode, char const *ssid,const char *passwd,char const* targetSSID,const char *targetPass)
 {
 	wifi_info("begin:");
-	if(SONOFF_NEWGEN) {
+	if(SONOFF_TH_ELITE_ORIGIN) {
 		pinMode(wifiIndicatorPin, OUTPUT); // Blue Wifi led
 	}
 	if(targetSSID && targetSSID[0]){
@@ -195,7 +195,7 @@ String WiFiSetupClass::status(void){
 
 bool WiFiSetupClass::stayConnected(void)
 {
-	if(SONOFF_NEWGEN) {
+	if(SONOFF_TH_ELITE_ORIGIN) {
 		digitalWrite(wifiIndicatorPin, HIGH);
 	}
 	if(WiFi.getMode() == WIFI_AP || WiFi.getMode() == WIFI_AP_STA){
@@ -348,7 +348,7 @@ bool WiFiSetupClass::stayConnected(void)
  	} // WiFi.status() != WL_CONNECTED 
  	else // connected
  	{
-		 if(SONOFF_NEWGEN) {
+		 if(SONOFF_TH_ELITE_ORIGIN) {
 		 	digitalWrite(wifiIndicatorPin, LOW);
 		 }
 		 if(_mode == WIFI_AP){
